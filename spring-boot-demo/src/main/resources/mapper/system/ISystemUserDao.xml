@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.cy.system.dao.ISystemUserDao">
+	<insert id="addUser" parameterType="map">
+		INSERT INTO `t_system_user` (`LIST_ID`, `USERNAME`, `PASSWORD`, `USER_ROLE_ID`, `REMARK`, `IS_DELETE`) 
+VALUES (#{listId},#{username},#{password}, NULL, NULL, NULL);
+	</insert>
+	
+	<select id="selectEntityByUsername" parameterType="String" resultType="cn.cy.system.entity.TSystemUserEntity">
+		select * from t_system_user where username = #{username}
+	</select>
+</mapper>

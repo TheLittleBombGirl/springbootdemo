@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>主页 </title>
+<#include "/common.html">
+</head>
+<body>
+<!-- 顶部区域 -->
+<#include "header.html">
+<div>
+	<div id="root" style="display: inline-block;width: 300px;position: absolute;">
+		<ul class="nav nav-pills nav-stacked">
+			<li v-for="item in menuList">
+				<a :href="item.url" target="menuFrame">{{item.menuName}}</a>
+			</li>
+		</ul>
+	</div>
+	<div style="display: inline-block;margin-left: 300px">
+		<iframe src="homePage.html" name="menuFrame" frameborder="1" width="1200" height="600">
+		</iframe>
+	</div>
+</div>
+<script src="/statics/js/system/main.js"></script>
+</body>
+</html>
