@@ -46,7 +46,6 @@ var vm = new Vue({
 			});
 		},
 		add: function(){
-			console.log("add");
 		}
 	},
 	created: function(){
