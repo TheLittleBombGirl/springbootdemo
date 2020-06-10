@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>买家列表</title>
+<#include "/common.html">
+</head>
+<body>
+<div id="buyerList">
+	<table id="table"></table>
+</div>
+<script type="text/javascript">
+	var vue = new Vue({
+		 el : '#buyerList',
+         data : {
+        	 message: [],
+             columns: [{
+                     title: 'id',
+                     field: 'listId'
+                 },
+                 {
+                     title: 'name',
+                     field: 'name'
+                 }
+             ],
+         },
+         //数据方法
+         methods : {
+             //初始化TableColumns
+             getModelColumns : function(menuTable, refreshEvent){
+//             	 $.get("/buyer/listData",function(data){
+//             		 console.log(data.page.rows);
+//             		 $('#table').bootstrapTable('load', data.page.rows);
+//             	 })
+
+            	        $("#table").bootstrapTable({
+
+            	            url: "/buyer/listData",
+            	            method: "get",
+            	            dataType: 'json',
+            	            // contentType: "application/json; charset=utf-8",
+            	            // contentType: "application/x-www-form-urlencoded",
+            	            cache: false,                        //是否使用缓存
+            	            showColumns: true,                  //是否显示所有的列
+            	            showRefresh: true,                  //是否显示刷新按钮
+            	            showToggle:true,                    //是否显示详细视图和列表视图
+            	            // rowStyle: rowStyles,                //行样式
+            	             pagination: true,                    //启用分页
+            	             pageNumber: 1,                        //初始化加载第一页，默认第一页
+            	             pageSize: 10,                        //每页的记录行数
+            	             pageList: [10,20,50],                //可供选择的每页行数
+            	             sidePagination: "server",
+            	             
+            	             onLoadSuccess: function(result)
+            	             {
+            	                 console.log("result: "+result);
+            	             },
+            	             onLoadError: function(err)
+            	             {
+            	                 console.log("error: "+err);
+            	             },
+            	             columns: [
+            	             {
+            	                 field: "listId",
+            	                 title: "序号",
+            	                 align: "center"
+            	             },
+            	             {
+            	                 field: "name",
+            	                 title: "学号",
+            	                 align: "center"
+            	             }],
+            	             queryParams: function(params){
+            	                 var queryData = {};    //如果没有额外的查询参数的话就新建一个空对象，如果有的话就先装你的查询参数
+            	                 //然后增加这两个
+            	                 queryData.limit = params.limit;
+            	                 queryData.offset = params.offset;
+            	                 return queryData;    //这个就是向服务端传递的参数对象
+            	             }
+            	         });
+            	}//end-initTable    
+         },
+         //创建完毕状态
+         created : function(){
+             this.getModelColumns("menuTable", "projectListTableRefresh");
+         }
+	})
+	
+	//连接字段格式化
+    function linkFormatter(value, row, index) {                
+        return "<a href='" + value + "' title='单击打开连接' target='_blank'>" + value + "</a>";
+    }
+    //Email字段格式化
+    function emailFormatter(value, row, index) {
+        return "<a href='mailto:" + value + "' title='单击打开连接'>" + value + "</a>";
+    }
+    //性别字段格式化
+    function sexFormatter(value) {
+        if (value == "女") { color = 'Red'; }
+        else if (value == "男") { color = 'Green'; }
+        else { color = 'Yellow'; }
+
+        return '<div  style="color: ' + color + '">' + value + '</div>';
+    }
+	//操作栏的格式化
+     function actionFormatter(value, row, index) {
+         var id = value;
+         var result = "";
+         result += "<a href='javascript:;' class='btn btn-xs green' onclick=\"EditViewById('" + id + "', view='view')\" title='查看'><span class='glyphicon glyphicon-search'></span></a>";
+         result += "<a href='javascript:;' class='btn btn-xs blue' onclick=\"EditViewById('" + id + "')\" title='编辑'><span class='glyphicon glyphicon-pencil'></span></a>";
+         result += "<a href='javascript:;' class='btn btn-xs red' onclick=\"DeleteByIds('" + id + "')\" title='删除'><span class='glyphicon glyphicon-remove'></span></a>";
+
+         return result;
+     }
+</script>
+</body>
+</html>

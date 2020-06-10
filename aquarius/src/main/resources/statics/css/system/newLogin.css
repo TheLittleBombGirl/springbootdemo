@@ -1,0 +1,260 @@
+html {
+	font-size: 100px;
+	opacity: 1;
+}
+
+body {
+	min-width: 800px;
+	overflow-x: auto;
+	font-size: .14rem;
+	color: #4c4c4c;
+}
+
+.login-logo {
+	text-align: center;
+	background: #ccc;
+	line-height: 0.5rem;
+	font-size: 0.25rem;
+}
+
+input {
+	padding-bottom: 0px;
+}
+
+a {
+	color: #666;
+	text-decoration: none;
+	outline: 0;
+}
+
+.login-page {
+	background: url(../../img/bg.jpg) center no-repeat;
+	background-size: 100%;
+}
+
+.pb-100p {
+	padding-bottom: 1.00rem;
+}
+
+.pt-50p {
+	padding-top: .50rem;
+}
+
+.w-100 {
+	width: 100%;
+}
+.t-a-c{
+	text-align: center;
+}
+
+em, .em {
+	font-size: .16rem;
+}
+
+em {
+	font-style: normal;
+}
+
+.relative {
+	position: relative;
+}
+
+.absolute {
+	position: absolute;
+}
+
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
+
+.bg-gray {
+	background-color: #4c4c4c;
+}
+
+.bg-cover {
+	background-size: cover;
+	background-position: center center;
+}
+
+.bg-transparent {
+	background-color: transparent;
+}
+
+.wrap {
+	max-width: 1200px;
+	min-width: 800px;
+	padding-left: .40rem;
+	padding-right: .40rem;
+	box-sizing: border-box;
+	margin: auto;
+}
+
+img {
+	vertical-align: middle;
+	border: 0;
+}
+
+.mt-5p {
+	margin-top: .05rem;
+}
+
+.log-reg-page form {
+	text-align: center;
+	width: 5.20rem;
+	margin: .50rem auto 0;
+}
+
+.log-reg-page form .input {
+	width: 100%;
+	height: .50rem;
+	line-height: .50rem;
+	background: #fff;
+	margin: .10rem 0;
+	border-radius: .05rem;
+	display: inline-block;
+}
+
+.log-reg-page form {
+	text-align: center;
+	width: 5.20rem;
+	margin: .50rem auto 0;
+}
+
+.log-reg-page form .input .name {
+	width: .90rem;
+	border-right: 1px solid #888888;
+	color: #888888;
+	height: .30rem;
+	line-height: .30rem;
+	float: left;
+	margin-top: .10rem;
+	padding-right: .20rem;
+	text-align: right;
+	font-size: .16rem;
+}
+
+.log-reg-page form .input input {
+	border: 0;
+	width: 3.80rem;
+	height: 100%;
+	float: left;
+	margin-left: .20rem;
+	font-size: .16rem;
+}
+
+.log-reg-page form .input:after {
+	content: "";
+	clear: both;
+	display: block;
+	visibility: hidden;
+	height: 0;
+}
+
+.help-block {
+	color: #feaf41;
+	display: none;
+}
+
+.log-reg-page .slider-wrap .slider_bg {
+	background-color: #feaf41;
+	border-radius: 0.05rem;
+}
+
+.log-reg-page .slider-wrap .absolute {
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+
+.log-reg-page .slider-wrap .slider_label {
+	z-index: 10;
+}
+
+.log-reg-page .slider-wrap .absolute {
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+
+.forminput-message {
+	float: none;
+	padding-left: 0px;
+	color: #feaf41;
+}
+
+.log-reg-page form .btn.bg-gray {
+	color: #fff;
+}
+
+.log-reg-page form .btn {
+	width: 100%;
+	height: .60rem;
+	line-height: .60rem;
+	border-radius: .05rem;
+	font-size: .20rem;
+	border: 1px solid #4c4c4c;
+	margin: .10rem 0;
+}
+
+.btn {
+	text-align: center;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.log-reg-page form .btn.bg-gray:hover, .log-reg-page form .btn.bg-transparent:hover
+	{
+	background-color: #feaf41;
+	border: 1px solid #feaf41;
+	color: #4c4c4c;
+}
+
+.log-reg-page form .input.focus {
+	box-shadow: 0px 0px .15rem rgba(0, 0, 0, 0.3);
+}
+
+input:focus, select:focus, button:focus {
+	outline: 0;
+}
+
+.log-reg-page form.captcha {
+	width: 100%;
+	margin: .10rem 0;
+	text-align: left;
+	overflow: hidden;
+}
+
+.log-reg-page form .captcha:after {
+	content: "";
+	clear: both;
+	display: block;
+	visibility: hidden;
+	height: 0;
+}
+
+.log-reg-page form .captcha .input {
+	width: 60%;
+	margin: 0;
+	float: left;
+}
+
+.log-reg-page form .captcha .input input {
+	width: 1.80rem
+}
+
+.has-feedback {
+	float: right;
+	display: inline-block;
+	width: 2rem;
+	height: 0.50rem;
+	text-align: center;
+}
+
+.has-feedback a {
+	top: 0.2rem;
+	right: -0.70rem;
+}
