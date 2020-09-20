@@ -6,9 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 //等等
 @SpringBootApplication
 @MapperScan(basePackages = {"cn.cy.*.dao"})
-public class SpringBootDemoApplication {
+public class AquariusApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootDemoApplication.class,args);
+		SpringApplication.run(AquariusApplication.class,args);
 	}
 
 }
